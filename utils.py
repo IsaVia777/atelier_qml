@@ -13,7 +13,10 @@ from qiskit.visualization.bloch import Bloch
 from qiskit_machine_learning.datasets import ad_hoc_data
 from qiskit.algorithms.optimizers import ADAM, COBYLA, SPSA
 
-
+#### Test function colab ####
+def test_function():
+    print('Exercises ready!')
+    
 ### DATASETS ###
 
 def get_iris(seed):
