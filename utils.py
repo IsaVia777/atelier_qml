@@ -5,14 +5,15 @@ from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
 # from qiskit import QuantumCircuit, Aer, execute, IBMQ
-from qiskit_aer import AerSimulator
+from qiskit_aer import AerSimulator, QasmSimulator
+from qiskit import QuantumCircuit
 from qiskit.circuit import Parameter
-from qiskit.utils import QuantumInstance
+# from qiskit.utils import QuantumInstance
 from qiskit.visualization import plot_bloch_multivector
 from qiskit.visualization.state_visualization import _bloch_multivector_data
 from qiskit.visualization.bloch import Bloch
 from qiskit_machine_learning.datasets import ad_hoc_data
-from qiskit.algorithms.optimizers import ADAM, COBYLA, SPSA
+from qiskit_algorithms.optimizers import ADAM, COBYLA, SPSA
 
 #### Test function colab ####
 def test_function():
