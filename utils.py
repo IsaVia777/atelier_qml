@@ -4,7 +4,8 @@ import numpy as np
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 
-from qiskit import QuantumCircuit, Aer, execute, IBMQ
+# from qiskit import QuantumCircuit, Aer, execute, IBMQ
+from qiskit_aer import AerSimulator
 from qiskit.circuit import Parameter
 from qiskit.utils import QuantumInstance
 from qiskit.visualization import plot_bloch_multivector
