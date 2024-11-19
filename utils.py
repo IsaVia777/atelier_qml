@@ -112,9 +112,10 @@ def get_statevector(qc, x, param_x, backend, params_var=None):
         params_dict = {p:v for (p,v) in zip(param_x, x_i)}
         if params_var:
             params_dict.update(params_var)
-        grounded_circ.append(qc.bind_parameters(params_dict))
+        grounded_circ.append(qc.assign_parameters(params_dict))
 
-    result = execute(grounded_circ, backend).result()
+    # result = execute(grounded_circ, backend).result()
+    result = backend.run(grounded_circ).result()
     statevectors = [result.get_statevector(i) for i in range(len(grounded_circ))]
 
     return statevectors
@@ -212,7 +213,7 @@ class BlochVisualization(Bloch):
         self.axes.text(0, 0, self.zlpos[0], self.zlabel[0], **opts0)
         self.axes.text(0, 0, self.zlpos[1], self.zlabel[1], **opts1)
 
-        for item in (self.axes.w_xaxis.get_ticklines() +
+'''        for item in (self.axes.w_xaxis.get_ticklines() +
                      self.axes.w_xaxis.get_ticklabels()):
             item.set_visible(False)
         for item in (self.axes.w_yaxis.get_ticklines() +
@@ -220,7 +221,7 @@ class BlochVisualization(Bloch):
             item.set_visible(False)
         for item in (self.axes.w_zaxis.get_ticklines() +
                      self.axes.w_zaxis.get_ticklabels()):
-            item.set_visible(False)
+            item.set_visible(False)'''
 
 
 def plot_bloch_visualization(statevectors, colors=['b', 'r'], x=None, x0=None, x1=None, score=None, fig=None, axes=None):
